@@ -54,6 +54,6 @@ For this lab, I am using the \*\*VHDX\*\* format.
 
 \###Navigate to Google and search for “download windows server 2016 /or download windows server 2019 /or download windows server 2022 iso”, click on Link the appears on google search.
 
-!\[Downloading ISO file](images/image1.png)
-!\[Downloading ISO file](images/image2.png)
+![Downloading ISO file](images/image1.png)
+![Downloading ISO file](images/image2.png)
 
