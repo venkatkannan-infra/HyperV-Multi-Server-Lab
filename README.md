@@ -1,3 +1,58 @@
 # HyperV-Multi-Server-Lab
-A comprehensive guide for setting up a 3-node Windows Server lab (2016, 2019, 2022) on Hyper-V
-📖 Introduction to VirtualizationVirtualization is the process that allows one physical computer to create and run multiple virtual computers (VMs). It’s like turning one powerful machine into many smaller, independent computers.Hyper-V: An in-built Windows application that acts as the "House."Virtual Machine (VM): The "Rooms" inside the house. Each room (VM) has its own characteristics and Operating System (Windows, Linux, etc.) without needing extra physical hardware.💾 Storage: VHD vs. VHDXBefore building, it is important to understand the virtual drive formats:FeatureVHD (Legacy)VHDX (Modern)CapacityMax 2 TBMax 64 TBCompatibilityOlder versions (Server 2008)Server 2012 and newerResilienceHigh risk of corruption on power failureBuilt-in protection (Log-based recovery)Recommendation: Always use VHDX for this lab to ensure data safety and better performance.🛠️ Lab Setup Instructions1. VM Creation WizardOpen Hyper-V Manager -> Actions -> New -> Virtual Machine.Name: Assign unique names (e.g., SVR-2016, SVR-2019, SVR-2022).Generation: Select Generation 2 (Required for modern UEFI and secure boot).Memory: Allocate at least 4096 MB (Enable Dynamic Memory).Networking: Select Default Switch.Hard Disk: Use VHDX format. Set size to 60 GB (Dynamically Expanding).2. OS InstallationMount the respective ISO (Server 2016, 2019, or 2022).Follow the on-screen prompts. When asked for a partition, select the Unallocated Space.Default Password: P@ssw0rdCrucial Step: Once installed, go to Settings -> DVD Drive and select "None" to eject the ISO and prevent an installation boot loop.⚙️ Initial Configuration Table (ICT)Perform these steps in Server Manager > Local Server for all three VMs:Rename Computer: Use names like LAB-SVR-16, LAB-SVR-19, etc.Disable Firewall: (Lab use only) To allow seamless application communication testing.Enable RDP: To manage the servers from your main host machine.Static IP (IPv4): Set manual IPs so the servers can always find each other.Disable IE Enhanced Security: Allows you to use the browser to download lab tools.Windows Update: Ensure all servers are fully patched.🛡️ Maintenance & BackupCheckpoints (System Restore)Checkpoints save the current state of the system. Always create a checkpoint before making risky changes like editing the Registry or installing new roles.To Create: Right-click VM -> Checkpoint.To Revert: Right-click a checkpoint -> Apply.Exporting & Importing (Full Backup)To move your lab to another computer or save a "Gold Image":Export: Right-click VM -> Export -> Choose location.Import: Actions pane -> Import Virtual Machine -> Select folder.📝 Final Improvements I made for your GitHub version:Fixed the Disk Size: I updated it to 60GB. 12GB is technically the minimum for a tiny "Core" install, but for a "Desktop Experience" (GUI) install, Windows will run out of space during the first update cycle.Formatting: I used Markdown tables and bold text to make it easy for recruiters or other developers to skim through your work.Security Warning: I added a note that disabling firewalls is only for lab environments.
+
+\# Hyper-V Multi-Server Lab Setup (2016, 2019, 2022)
+
+
+
+\## 📖 Overview
+
+This project documents the installation and configuration of a virtual lab environment containing three different versions of Windows Server.
+
+
+
+\### Key Concepts
+
+\* \*\*Virtualization:\*\* Running multiple "Virtual Machines" (VMs) on one physical computer.
+
+\* \*\*Hyper-V:\*\* The "House" (Hypervisor) that hosts the virtual rooms (VMs).
+
+\* \*\*VM:\*\* The individual "Rooms" (Servers) running independent operating systems.
+
+
+
+---
+
+
+
+
+
+\## 💾 Storage: VHD vs. VHDX
+
+For this lab, I am using the \*\*VHDX\*\* format.
+
+
+
+| Feature | VHD | VHDX |
+
+| :--- | :--- | :--- |
+
+| \*\*Capacity\*\* | Max 2 TB | Max 64 TB |
+
+| \*\*Resilience\*\* | Low (Corrupts easily) | High (Power failure protection) |
+
+
+
+
+
+---
+
+
+
+\## 🛠️ Step-by-Step Installation
+
+
+
+\###Navigate to Google and search for “download windows server 2016 /or download windows server 2019 /or download windows server 2022 iso”, click on Link the appears on google search.
+
+!\[Downloading ISO file] (images/image1.png)
+
