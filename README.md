@@ -55,5 +55,43 @@ For this lab, I am using the \*\*VHDX\*\* format.
 \###Navigate to Google and search for “download windows server 2016 /or download windows server 2019 /or download windows server 2022 iso”, click on Link the appears on google search.
 
 ![Downloading ISO file](Images/image1.png)
-![Downloading ISO file](Images/image2.png)
+
+
+\###Open **Hyper-V Manager**
+
+Navigate to:Actions → New → Virtual Machine
+Enter the VM name and choose the storage location.
+
+![Create VM](images/image2.png)
+
+
+\### Step 3 – Choose Generation
+
+Select: Generation 1
+![Generation Selection](images/image3.png)
+
+---
+
+### Step 4 – Assign Memory (RAM)
+
+Configure the RAM depending on your system resources.
+
+Example:4096 MB
+
+![Assign Memory](images/image4.png)
+
+---
+
+### Step 5 – Configure Networking
+
+Select: Default Switch
+
+
+![Network Configuration](images/image5.png)
+
+---
+
+### Step 6 – Configure Virtual Hard Disk
+
+Minimum recommended size: 12 GB
 
